@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #4B0082;
+            color: white;
+            text-align: center;
+        }
+
+        #weather-container,
+        #weather-data {
+            margin: 20px auto;
+            padding: 20px;
+            width: 80%;
+            max-width: 600px;
+            background-color: #4B0082;
+            border-radius: 10px;
+            display: none;
+        }
+
+        #map {
+            height: 300px;
+            margin: 0, 0;
+        }
+
+        /* weather-footer */
+        .weather-footer {
+            background-color: white;
+            padding: 20px;
+            border-top: 1px solid #1724d3;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .weather-info div {
+            margin-bottom: 10px;
+            color: #4B0082;
+        }
+
+        #refresh-button {
+            background-color: blue;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #refresh-button:hover {
+            background-color: darkblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="landing-page">
+        <h1>Weather Api</h1>
+        <button id="fetch-data">Fetch Data</button>
+    </div>
+
+    <div id="weather-container">
+        <h2>Welcome To The Weather App</h2>
+        <p>Here is your current location:</p>
+        <p id="location-info"></p>
+        <div id="map">
+            <iframe id="google-map" width="600" height="350" frameborder="0" style="border:0"></iframe>
+        </div>
+    </div>
+
+    <div id="weather-data">
+
+        <h3>Your Weather Data</h3>
+
+        <p id="weather-details"></p>
+        <footer class="weather-footer">
+            <div class="weather-info">
+                <div>Location: <span id="location"></span></div>
+                <div>Wind Speed: <span id="wind-speed"></span></div>
+                <div>Humidity: <span id="humidity"></span></div>
+                <div>Time Zone: <span id="time-zone"></span></div>
+                <div>Pressure: <span id="pressure"></span></div>
+                <div>Wind Direction: <span id="wind-direction"></span></div>
+                <div>UV Index: <span id="uv-index"></span></div>
+                <div>Feels Like: <span id="feels-like"></span></div>
+            </div>
+            <button id="refresh-button" onclick="getLocation()">Refresh</button>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
